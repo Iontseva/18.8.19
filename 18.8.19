@@ -1,0 +1,16 @@
+quantity = int(input("Введите количество билетов "))
+age = list(map(int, input("Введите возраст посетителей через запятую ").split(',')))
+if len(age) != quantity:
+    print("Ошибка!")
+else:
+    price = 0
+    for value in age:
+        if 18 <= value < 25:
+            price = price + 990
+        elif value >= 25:
+            price = price + 1390
+    if quantity > 3:
+        print("Сумма к оплате: ", int(price * 0.9))
+    else:
+        print("Сумма к оплате: ", price)
+
